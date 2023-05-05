@@ -78,6 +78,7 @@ pipeline {
             steps {
                 echo 'The code is deployed to the production environment AWS EC2.'
                 echo "${BUILD_URL}/consoleText"
+                echo consoleText=$(cat consoleText.txt)
             }
         }
     }
