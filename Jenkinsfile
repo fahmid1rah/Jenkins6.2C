@@ -65,7 +65,7 @@ pipeline {
                 success{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Integration Tests on Staging Status Email",
-                    body: "This Integration Tests on Staging is successful"
+                    body: "This Integration Tests on Staging is successful ${BUILD_LOG_EXCERPT}"
                 }
                 failure{
                     mail to: "fahmid1rah@gmail.com",
@@ -77,6 +77,7 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo 'The code is deployed to the production environment AWS EC2.'
+                echo "${BUILD_LOG_EXCERPT}"
             }
         }
     }
