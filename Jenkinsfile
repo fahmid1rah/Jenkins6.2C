@@ -65,7 +65,7 @@ pipeline {
                 success{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Integration Tests on Staging Status Email",
-                    body: "This Integration Tests on Staging is successful ${${BUILD_URL}/consoleText}"
+                    body: "This Integration Tests on Staging is successful"
                 }
                 failure{
                     mail to: "fahmid1rah@gmail.com",
