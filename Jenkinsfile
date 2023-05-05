@@ -77,7 +77,7 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo 'The code is deployed to the production environment AWS EC2.'
-                echo "${${BUILD_URL}/consoleText}"
+                echo "${BUILD_URL}/consoleText"
             }
         }
     }
