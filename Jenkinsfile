@@ -59,7 +59,7 @@ pipeline {
         }
         stage('Integration Tests on Staging') {
             steps {
-                ech 'Integration tests for staging environment done using SELENIUM.'
+                echo 'Integration tests for staging environment done using SELENIUM.'
             }
             post{
                 success{
