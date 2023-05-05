@@ -12,6 +12,13 @@ pipeline {
                 echo "Fetch the source code from the ${DIRECTORY_PATH}."
                 echo 'Compile the code and generate any necessary artifacts now'
             }
+            post{
+                success{
+                    mail to: "fahmid1rah@gmail.com"
+                    subject: "Build Status Email"
+                    body: "This build is successful"
+                }
+            }
         }
         stage('Test') {
             steps {
