@@ -16,7 +16,7 @@ pipeline {
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Unit and Integration Test Status Email",
                     body: "This Unit and Integration Test is successful", 
-                    body: "The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
+                    
                 }
                 failure{
                     mail to: "fahmid1rah@gmail.com",
