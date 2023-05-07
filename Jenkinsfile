@@ -76,7 +76,7 @@ pipeline {
                 success{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Deployed to Production",
-                    body: "The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
+                    body: "The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText "
                 }
             }
         }
