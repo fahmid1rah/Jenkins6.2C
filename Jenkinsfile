@@ -1,11 +1,5 @@
 pipeline {
     agent any
-    environment{
-        DIRECTORY_PATH = "/ProgramData/Jenkins/.jenkins/workspace/SIT753"
-        //C:\ProgramData\Jenkins\.jenkins\workspace\SIT753
-        TESTING_ENVIRONMENT = 'TEST ENV'
-        PRODUCTION_ENVIRONMENT = 'FAHMIUDR'
-    }
     stages {
         stage('Build') {
             steps {
@@ -65,7 +59,7 @@ pipeline {
                 success{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Integration Tests on Staging Status Email",
-                    body: "This Integration Tests on Staging is successful ${BUILD_URL}/consoleText"
+                    body: "This Integration Tests on Staging is successful"
                 }
                 failure{
                     mail to: "fahmid1rah@gmail.com",
@@ -77,8 +71,13 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo 'The code is deployed to the production environment AWS EC2.'
-                echo "${BUILD_URL}/consoleText"
             }
+            post{
+                success{
+                    mail to: "fahmid1rah@gmail.com",
+                    subject: "Deployed to Production",
+                    body: "The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
+                }
         }
     }
 }
