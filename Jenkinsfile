@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the code using MAVEN automation tool to compile and package the code.'
+                echo 'Building the code using MAVEN automation tool to compile and package the code. '
             }
         }
         stage('Unit and Integration Test') {
