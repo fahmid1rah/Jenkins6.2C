@@ -70,7 +70,7 @@ pipeline {
                 failure{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Integration Tests on Staging Status Email",
-                    body: "This Integration Tests on Staging is unsuccessful"
+                    body: "This Integration Tests on Staging is unsuccessful $BUILD_URL"
                 }
             }
         }
