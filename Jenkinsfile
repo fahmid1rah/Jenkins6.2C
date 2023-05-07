@@ -6,7 +6,7 @@ pipeline {
                 echo 'Building the code using MAVEN automation tool to compile and package the code.'
             }
         }
-        stage('Unit and Integration Test') {
+        stag('Unit and Integration Test') {
             steps {
                 echo 'Unit Test - Unit tests ensures the code functions as expected using JUNIT.'
                 echo 'Integration Test - Integration tests ensures the different components of the application work together as expected using SELENIUM.'
@@ -18,7 +18,7 @@ pipeline {
                     body: "This Unit and Integration Test is successful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText" 
                     
                 }
-                failre{
+                failure{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Unit and Integration Test Status Email",
                     body: "This Unit and Integration Test is unsuccessful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
