@@ -78,6 +78,7 @@ pipeline {
                     subject: "Deployed to Production",
                     body: "The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
                 }
+            }
         }
     }
 }
