@@ -6,7 +6,7 @@ pipeline {
                 echo 'Building the code using MAVEN automation tool to compile and package the code.'
             }
         }
-        stag('Unit and Integration Test') {
+        stage('Unit and Integration Test') {
             steps {
                 echo 'Unit Test - Unit tests ensures the code functions as expected using JUNIT.'
                 echo 'Integration Test - Integration tests ensures the different components of the application work together as expected using SELENIUM.'
@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Security Scan') {
             steps {
-                echo 'The code is scanned using QUALYS  to identify any vulnerabilities'
+                ech 'The code is scanned using QUALYS  to identify any vulnerabilities'
             }
             post{
                 success{
