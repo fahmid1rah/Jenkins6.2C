@@ -15,13 +15,13 @@ pipeline {
                 success{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Unit and Integration Test Status Email",
-                    body: "This Unit and Integration Test is successful" 
+                    body: "This Unit and Integration Test is successful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText" 
                     
                 }
                 failure{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Unit and Integration Test Status Email",
-                    body: "This Unit and Integration Test is unsuccessful"
+                    body: "This Unit and Integration Test is unsuccessful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
                 }
             }
         }
@@ -38,12 +38,12 @@ pipeline {
                 success{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Security Scan Status Email",
-                    body: "This Security Scan is successful"
+                    body: "This Security Scan is successful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
                 }
                 failure{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Security Scan Status Email",
-                    body: "This Security Scan is unsuccessful"
+                    body: "This Security Scan is unsuccessful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
                 }
             }
         }
@@ -60,25 +60,18 @@ pipeline {
                 success{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Integration Tests on Staging Status Email",
-                    body: "This Integration Tests on Staging is successful"
+                    body: "This Integration Tests on Staging is successful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
                 }
                 failure{
                     mail to: "fahmid1rah@gmail.com",
                     subject: "Integration Tests on Staging Status Email",
-                    body: "This Integration Tests on Staging is unsuccessful"
+                    body: "This Integration Tests on Staging is unsuccessful. The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText"
                 }
             }
         }
         stage('Deploy to Production') {
             steps {
                 echo 'The code is deployed to the production environment AWS EC2.'
-            }
-            post{
-                success{
-                    mail to: "fahmid1rah@gmail.com",
-                    subject: "Deployed to Production",
-                    body: "The console log output for the current deployment is in the following link: ${BUILD_URL}/consoleText "
-                }
             }
         }
     }
