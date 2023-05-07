@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Security Scan') {
             steps {
-                ech 'The code is scanned using QUALYS  to identify any vulnerabilities'
+                echo 'The code is scanned using QUALYS  to identify any vulnerabilities'
             }
             post{
                 success{
